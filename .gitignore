@@ -1,0 +1,11 @@
+# build / distribution
+new-kojiya-site.zip
+*.zip
+
+# OS / editor
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+.vscode/
+.idea/
