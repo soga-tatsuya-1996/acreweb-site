@@ -284,25 +284,13 @@ strong{ font-weight:700; }
 .menu-notes strong{ color:var(--turmeric); }
 
 .menu-feature-visual{ text-align:center; }
-.curry-plate{
-  position:relative; width:min(78vw, 360px); aspect-ratio:1; margin-inline:auto;
-  border-radius:50%;
-  background:radial-gradient(circle at 50% 42%, #2f2620, #14100d 78%);
-  box-shadow:0 40px 60px -30px rgba(0,0,0,.7), inset 0 0 0 10px rgba(247,241,230,.05),
-             inset 0 0 0 11px rgba(247,241,230,.10);
+.menu-photo{
+  display:block; margin-inline:auto;
+  width:min(86vw, 420px); height:min(108vw, 520px);
+  object-fit:cover; border-radius:16px;
+  box-shadow:0 40px 70px -34px rgba(0,0,0,.75),
+             inset 0 0 0 1px rgba(247,241,230,.10);
 }
-.curry-rice{
-  position:absolute; inset:26% 18% 20% 30%; border-radius:50% 46% 52% 48%;
-  background:linear-gradient(150deg, #f2d98f, #e6c25f);
-  box-shadow:0 6px 14px rgba(0,0,0,.35);
-}
-.curry-scoop{ position:absolute; border-radius:50% 50% 48% 52%; filter:saturate(1.1); }
-.curry-scoop-1{ inset:20% 30% 46% 20%; background:radial-gradient(circle at 40% 35%, #d98a3c, #8f3f16); }
-.curry-scoop-2{ inset:44% 18% 22% 44%; background:radial-gradient(circle at 40% 35%, #cf5637, #7d2413); }
-.curry-scoop-3{ inset:52% 46% 18% 16%; background:radial-gradient(circle at 40% 35%, #b98a2f, #6d5016); }
-.curry-garnish{ position:absolute; border-radius:50%; }
-.curry-garnish-1{ width:12%; height:12%; background:#e0402b; top:22%; right:26%; box-shadow:0 3px 8px rgba(0,0,0,.4); }
-.curry-garnish-2{ width:8%; height:8%; background:#6fae4b; bottom:26%; right:40%; box-shadow:0 3px 8px rgba(0,0,0,.4); }
 .visual-caption{ margin-top:18px; font-size:.72rem; letter-spacing:.08em; color:rgba(247,241,230,.5); }
 
 /* ---------- Gallery (Instagram embeds) ---------- */

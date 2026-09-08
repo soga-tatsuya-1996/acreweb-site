@@ -66,17 +66,13 @@ python -m http.server 8000
 > より手間なく「常に最新」を出したい場合は、LightWidget / SnapWidget などの
 > Instagram フィードウィジェット、または Instagram Graph API の利用を検討してください。
 
-## その他の写真（任意）
+## その他の写真
 
-ヒーロー背景やメニューの一皿写真を実写に差し替える場合:
-
-1. 画像を `assets/img/` に置く（横長 4:3、幅 1200px 程度、JPEG 品質 80 前後を推奨）。
-2. `index.html` / `style.css` の該当箇所を編集。
-   - **ヒーロー背景**: `style.css` の `.hero` の `background` に `url("../img/xxx.jpg")` を重ねる。
-   - **メニューの一皿写真**: `<div class="menu-feature-visual">` 内の CSS 描画プレート（`.curry-plate`）を
-     `<img src="assets/img/plate.jpg" alt="3種あいがけプレート">` に置き換え。
-
-ヒーローとメニューの装飾は現状 CSS 描画です（写真がなくても成立します）。
+- **メニューの一皿写真**: `assets/img/curry.jpg` を表示中（Pexels のフリー素材／商用可・帰属表示不要）。
+  実際の料理写真に差し替える場合は、同じファイル名で上書きするか、
+  `index.html` の `<img class="menu-photo" …>` の `src` を変更する。縦長 4:5・幅 1200px 程度を推奨。
+- **ヒーロー背景**: 現状は CSS グラデーション。写真にする場合は `style.css` の `.hero` の
+  `background` に `url("../img/xxx.jpg")` を重ねる。
 
 ## 未確定・要確認事項
 
@@ -85,5 +81,6 @@ python -m http.server 8000
 - [ ] 正確な最寄り電停名・徒歩分数
 - [ ] 価格（Instagram は1,500円、一部グルメサイトは1,300円表記。最新はオーナー確認）
 - [ ] ロゴデータ（現在はテキスト＋CSS マーク）
+- [ ] メニューの一皿写真を実際の料理写真へ差し替え（現在は Pexels のフリー素材）
 - [ ] SNS 以外の連絡先（メール等）
 - [ ] ギャラリーの掲載投稿（`index.html` の `.ig-grid` 内 permalink）を定期的に最新へ更新
