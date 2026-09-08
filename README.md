@@ -68,11 +68,11 @@ python -m http.server 8000
 
 ## その他の写真
 
-- **メニューの一皿写真**: `assets/img/curry.jpg` を表示中（Pexels のフリー素材／商用可・帰属表示不要）。
-  実際の料理写真に差し替える場合は、同じファイル名で上書きするか、
-  `index.html` の `<img class="menu-photo" …>` の `src` を変更する。縦長 4:5・幅 1200px 程度を推奨。
-- **ヒーロー背景**: 現状は CSS グラデーション。写真にする場合は `style.css` の `.hero` の
-  `background` に `url("../img/xxx.jpg")` を重ねる。
+現在サイト内に料理写真は使用していません（メニューはテキストのみ）。写真を入れる場合:
+
+1. 画像を `assets/img/` に置く。
+2. **ヒーロー背景**: `style.css` の `.hero` の `background` に `url("../img/xxx.jpg")` を重ねる。
+3. **メニューに写真を戻す**: `#menu` の `.menu-feature` に `<img>` を追加し、`style.css` でレイアウトを調整。
 
 ## 未確定・要確認事項
 
@@ -81,6 +81,5 @@ python -m http.server 8000
 - [ ] 正確な最寄り電停名・徒歩分数
 - [ ] 価格（Instagram は1,500円、一部グルメサイトは1,300円表記。最新はオーナー確認）
 - [ ] ロゴデータ（現在はテキスト＋CSS マーク）
-- [ ] メニューの一皿写真を実際の料理写真へ差し替え（現在は Pexels のフリー素材）
 - [ ] SNS 以外の連絡先（メール等）
 - [ ] ギャラリーの掲載投稿（`index.html` の `.ig-grid` 内 permalink）を定期的に最新へ更新

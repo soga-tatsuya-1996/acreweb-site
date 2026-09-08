@@ -42,7 +42,7 @@
 
   /* ---- reveal on scroll ---- */
   var targets = document.querySelectorAll(
-    ".section-head, .concept-card, .menu-feature-body, .menu-feature-visual, .ig-grid, .info-row, .access-info, .access-map"
+    ".section-head, .concept-card, .menu-feature-body, .ig-grid, .info-row, .access-info, .access-map"
   );
   Array.prototype.forEach.call(targets, function (el) {
     el.classList.add("reveal");
