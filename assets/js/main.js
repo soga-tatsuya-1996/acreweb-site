@@ -1,4 +1,4 @@
-/* ニューコウジヤ / NEW KOJIYA — site interactions */
+/* アクレウェブ株式会社 / ACRE WEB — site interactions */
 (function () {
   "use strict";
 
@@ -32,9 +32,11 @@
     });
   }
 
-  nav.addEventListener("click", function (e) {
-    if (e.target.tagName === "A") closeNav();
-  });
+  if (nav) {
+    nav.addEventListener("click", function (e) {
+      if (e.target.tagName === "A") closeNav();
+    });
+  }
 
   document.addEventListener("keydown", function (e) {
     if (e.key === "Escape") closeNav();
@@ -42,7 +44,7 @@
 
   /* ---- reveal on scroll ---- */
   var targets = document.querySelectorAll(
-    ".section-head, .concept-card, .menu-feature-body, .ig-grid, .info-row, .access-info, .access-map"
+    ".section-head, .strength-card, .service-card, .work-card, .info-row, .history-row, .service-detail, .flow-row, .channel-card, .about-grid > *"
   );
   Array.prototype.forEach.call(targets, function (el) {
     el.classList.add("reveal");
@@ -69,8 +71,6 @@
     Array.prototype.forEach.call(targets, function (el) {
       io.observe(el);
     });
-    // Safety net: if the observer never fires (tab restored from bg,
-    // print, reduced-motion tooling, etc.) make sure nothing stays hidden.
     window.addEventListener("load", function () {
       setTimeout(revealAll, 1800);
     });
@@ -81,4 +81,17 @@
   /* ---- year ---- */
   var year = document.getElementById("year");
   if (year) year.textContent = new Date().getFullYear();
+
+  /* ---- contact form: no backend yet, prevent accidental submit ---- */
+  var form = document.getElementById("contactForm");
+  if (form) {
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var note = document.getElementById("formNote");
+      if (note) {
+        note.textContent =
+          "送信機能は未実装です。実際の運用では、フォーム送信先（メール or フォームサービス）を接続してください。";
+      }
+    });
+  }
 })();

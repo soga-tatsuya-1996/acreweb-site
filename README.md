@@ -1,16 +1,26 @@
-# ニューコウジヤ / NEW KOJIYA — 公式サイト
+# アクレウェブ株式会社 — コーポレートサイト（サンプル）
 
-岡山市北区京橋町のスパイスカレー専門店「ニューコウジヤ」の Web サイト（静的サイト）。
+ホームページ制作会社「アクレウェブ株式会社」（架空）の公式サイト（静的サイト）。
+会社名・代表者名・住所・実績のクライアント名はすべてサンプルです。
 
 ## 構成
 
 ```
-WebSite/
-├── index.html            … 1ページ完結のサイト本体
+corporate-site/
+├── index.html              … トップページ
+├── about/index.html        … 会社概要（会社情報・沿革）
+├── services/index.html     … 事業内容・ご依頼の流れ
+├── works/
+│   ├── index.html          … 制作実績一覧
+│   ├── work-01/index.html  … 実績詳細：カフェ（飲食店）
+│   ├── work-02/index.html  … 実績詳細：美容室
+│   ├── work-03/index.html  … 実績詳細：工務店
+│   └── work-04/index.html  … 実績詳細：EC・物販
+├── contact/index.html      … お問い合わせフォーム
 ├── assets/
-│   ├── css/style.css     … スタイル（配色・レイアウト）
-│   ├── js/main.js        … ヘッダー追従・スマホメニュー・スクロール演出
-│   └── img/              … 写真を入れる場所（現在は空）
+│   ├── css/style.css       … 共通スタイル
+│   ├── js/main.js          … ヘッダー追従・スマホメニュー・スクロール演出
+│   └── img/                … 画像を入れる場所（現在は未使用、CSSグラデーションで代用）
 └── README.md
 ```
 
@@ -23,63 +33,26 @@ python -m http.server 8000
 
 → ブラウザで <http://localhost:8000> を開く。
 
-## 掲載情報（2026年9月時点・Instagram / 各グルメサイトより）
+## 制作実績（works）の増やし方
 
-| 項目 | 内容 |
-| --- | --- |
-| 店名 | スパイスカレー専門店「ニューコウジヤ」 |
-| 住所 | 岡山県岡山市北区京橋町1-10 |
-| 営業時間 | 11:00–14:30（L.O.） |
-| 定休日 | 木曜・金曜 |
-| 席数 | カウンター7席 |
-| メニュー | 3種あいがけ 1,500円 のみ（ライス量の調整可） |
-| 支払い | 現金・QRコード決済（カード・電子マネー不可） |
-| 予約 | 不可 |
-| 駐車場 | なし（近隣コインパーキング） |
-| Instagram | <https://www.instagram.com/new_kojiya/> |
+1. `works/work-05/` のように新しいディレクトリを作成し、既存の `work-04/index.html` をコピーして内容を書き換える。
+2. `works/index.html` の `.works-grid` にカード（`<a class="work-card">`）を1つ追加する。
+3. トップページ（`index.html`）の実績抜粋にも載せる場合は `.works-grid` にカードを追加する（4件を超える場合は差し替え推奨）。
+4. サムネイル色は `assets/css/style.css` の `.work-thumb-01`〜`.work-thumb-04` を参考に、新しいクラス（例 `.work-thumb-05`）を追加する。写真を使う場合は `assets/img/README.txt` を参照。
+5. 各実績詳細ページ下部の `.work-nav`（前後の実績リンク）も合わせて更新する。
 
-> 情報は Instagram（@new_kojiya）と食べログ・Retty の公開情報をもとにしています。
-> 電話番号・郵便番号など未確認の項目があります。オーナー確認のうえ更新してください。
+## お問い合わせフォームについて
 
-## ギャラリー（Instagram 埋め込み）
+`contact/index.html` のフォームは送信先が未実装です（`assets/js/main.js` 内で送信をキャンセルし、注意文を表示します）。
+実運用では、以下のいずれかに差し替えてください。
 
-`#gallery` セクションは **Instagram 公式の埋め込み**（`embed.js`）で最新投稿を表示しています。
-画像ファイルをサーバーに置く必要はなく、Instagram 側の投稿がそのまま反映されます（著作権・利用規約の面でも安全）。
-
-### 表示する投稿を更新する
-
-`index.html` の `<div class="ig-grid">` 内にある 6 個の `<blockquote class="instagram-media" …>` の
-`data-instgrm-permalink` を、表示したい投稿の URL に差し替えます。
-
-```html
-<blockquote class="instagram-media"
-  data-instgrm-permalink="https://www.instagram.com/p/＜投稿ID＞/"
-  data-instgrm-version="14">
-  <a href="https://www.instagram.com/p/＜投稿ID＞/">Instagramで見る</a>
-</blockquote>
-```
-
-投稿 ID は、Instagram で投稿を開いたときの URL `.../p/XXXXXXXX/` の `XXXXXXXX` 部分です。
-件数は増減自由（`<blockquote>` を足し引きするだけ）。PC で自動的に 2 列に並びます。
-
-> 現在掲載しているのは、制作時点（2026-09-07）の最新 6 投稿です。
-> より手間なく「常に最新」を出したい場合は、LightWidget / SnapWidget などの
-> Instagram フィードウィジェット、または Instagram Graph API の利用を検討してください。
-
-## その他の写真
-
-現在サイト内に料理写真は使用していません（メニューはテキストのみ）。写真を入れる場合:
-
-1. 画像を `assets/img/` に置く。
-2. **ヒーロー背景**: `style.css` の `.hero` の `background` に `url("../img/xxx.jpg")` を重ねる。
-3. **メニューに写真を戻す**: `#menu` の `.menu-feature` に `<img>` を追加し、`style.css` でレイアウトを調整。
+- `<form>` の `action`/`method` を自社サーバーのフォーム処理に接続する
+- Googleフォーム・フォームメーラー等の外部フォームサービスに差し替える
 
 ## 未確定・要確認事項
 
-- [ ] 郵便番号（暫定で 700-0821 と記載）
-- [ ] 電話番号（未記載）
-- [ ] 正確な最寄り電停名・徒歩分数
-- [ ] 価格（Instagram は1,500円、一部グルメサイトは1,300円表記。最新はオーナー確認）
-- [ ] ロゴデータ（現在はテキスト＋CSS マーク）
-- [ ] SNS 以外の連絡先（メール等）
-- [ ] ギャラリーの掲載投稿（`index.html` の `.ig-grid` 内 permalink）を定期的に最新へ更新
+- [ ] 会社名・代表者名・所在地・資本金（すべて仮の情報）
+- [ ] 制作実績のクライアント名・内容（すべて架空の事例）
+- [ ] ロゴデータ（現在はテキスト＋CSSマーク）
+- [ ] お問い合わせフォームの送信先
+- [ ] 実績・ヒーロー画像（現在はCSSグラデーションで代用）
