@@ -289,6 +289,7 @@ ul{ list-style:none; }
 .work-thumb-04::before{ background-image:url(../img/works/work-04.jpg); }
 .work-thumb-kojiya::before{ background-image:url(../img/works/kojiya.jpg); }
 .work-thumb-kenshin::before{ background-image:url(../img/works/kenshin.jpg); }
+.work-thumb-kareeda::before{ background-image:url(../img/works/kareeda.jpg); }
 .work-thumb-cat{
   position:relative; z-index:1; font-size:.68rem; letter-spacing:.2em; color:#fff;
   background:rgba(16,21,42,.5); border-radius:999px; padding:5px 14px;
